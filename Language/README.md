@@ -1,1 +1,1 @@
-## PScript my the language for a diy remake of a ducky payload usb hid.
+## PScript gets compiled into a binary file that will eventually be loaded through the internet onto a p-usb, and then executed.
