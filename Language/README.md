@@ -1,0 +1,1 @@
+## PScript my the language for a diy remake of a ducky payload usb hid.

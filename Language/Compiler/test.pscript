@@ -1,0 +1,17 @@
+// Simple test script
+GUI r
+DELAY 50
+STRING notepad.exe
+ENTER
+DELAY 100
+STRING pscript test
+ENTER
+STRING ----------
+ENTER
+ENTER
+STRING hi!!! uwu
+{
+STRING u
+DELAY 100
+}
+REPEAT 10

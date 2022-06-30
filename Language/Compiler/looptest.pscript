@@ -1,0 +1,18 @@
+GUI r
+DELAY 50
+STRING notepad.exe
+ENTER
+DELAY 100
+STRING slvtty script test
+ENTER
+STRING ----------
+ENTER
+ENTER
+STRING hii!! uwu~
+
+// braces indicate a group. groups can be repeated (IMPLEMENTED), and can be conditional (NOT IMPLEMENTED YET)
+{
+ENTER
+STRING loop test !#{i}
+}
+REPEAT 10
