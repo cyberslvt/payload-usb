@@ -128,16 +128,18 @@ std::byte strInstrToByte(std::string instruction) {
 }
 
 int main(int argc, char** argv) {
-	if (argc != 2) { std::cout << "Filepath argument required!" << std::endl; std::cin.get(); return 0; }
+	if (argc != 2) { std::cout << "Filepath argument required!" << std::endl; return 0; }
 
 	keyboardConfig = Configuration();
 	layoutConfig = Configuration();
 	std::cout << "Loading configuration files..." << std::endl;
+
 	Configuration::LoadFromFile("resources/keyboard.cfg", keyboardConfig);
 	std::cout << "|- Loaded 'keyboard.cfg'" << std::endl;
 	Configuration::LoadFromFile("resources/gb.cfg", layoutConfig);
-	std::cout << "Finished loading configuration." << std::endl;
 	std::cout << "|- Loaded 'gb.cfg'" << std::endl;
+
+	std::cout << "Finished loading configuration." << std::endl;
 	std::cout << std::endl;
 
 	std::vector<std::string> lines;
@@ -349,6 +351,7 @@ int main(int argc, char** argv) {
 
 	std::cout << "Writing output file..." << std::endl;
 	std::ofstream file(std::filesystem::path(argv[1]).filename().replace_extension("").string() + ".bin", std::ios::binary);
+
 	char* d = new char[byteCount];
 	for (int b = 0; b < byteCount; b++) {
 		int p = std::floor(((float)b / (float)byteCount) * 10.f);
@@ -363,7 +366,8 @@ int main(int argc, char** argv) {
 	file.close();
 	delete[] d;
 	std::cout << "|- 100%" << std::endl;
-	std::cout << "Finished writing to '" << std::filesystem::path(argv[1]).filename().replace_extension("").string() + ".bin" << std::endl;
+	std::cout << "Finished writing to '" << std::filesystem::path(argv[1]).filename().replace_extension("").string() + ".bin'" << std::endl;
 	std::cout << std::endl;
+
 	std::cout << "Payload compiled." << std::endl;
 }
